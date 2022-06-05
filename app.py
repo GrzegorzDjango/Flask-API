@@ -14,10 +14,11 @@ app.secret_key ='grzegorz123'
 api = Api(app)
 
 # make SQLAlchemy created data.db file
-@app.before_first_request
-def create_tables():
-    # this will create all the tables in app.config['SQLALCHEMY_DATABASE_URI'] unless the exist already
-    db.create_all()
+# moving below to run.py
+# @app.before_first_request
+# def create_tables():
+#     # this will create all the tables in app.config['SQLALCHEMY_DATABASE_URI'] unless the exist already
+#     db.create_all()
 
 jwt = JWT(app, authenticate, identity)  # /auth
 
